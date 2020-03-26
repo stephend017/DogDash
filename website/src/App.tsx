@@ -8,15 +8,14 @@ function App() {
   const [dog, setDog] = useState<Dog>();
 
   return (
-    <>
-
+    <div style={{overflow: "hidden" }}>
       <Grid
         container
         justify='center'
         alignItems='center'
         direction='column'
         spacing={2}
-        style={{ margin: '10% 0' }}
+        style={{ margin: '10% 0'}}
       >
         <Grid item>
 
@@ -28,7 +27,7 @@ function App() {
         </Grid>
       </Grid>
 
-    </>
+    </div>
   );
 }
 
