@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Card, CardMedia, Button, CardContent, Typography, Grid } from '@material-ui/core';
+import { useDogAPI } from './useDogAPI';
+import { Dog } from './dog';
 
 function App() {
+  const nextDog = useDogAPI();
+  const [dog, setDog] = useState<Dog>();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+        direction='column'
+        spacing={2}
+        style={{ margin: '10% 0' }}
+      >
+        <Grid item>
+
+          <DogCard dog={dog} />
+        </Grid>
+        <Grid item>
+          <Button variant='contained' color='primary' onClick={async (e) => { setDog(await nextDog()) }}>{dog && dog?.image_url && "New Dog!"}{(!dog || !dog?.image_url) && 'Click Me'}</Button>
+
+        </Grid>
+      </Grid>
+
+    </>
+  );
+}
+
+function DogCard({ dog }: { dog: Dog | undefined }) {
+  return (
+    <>
+      {dog && dog?.image_url &&
+        <Card style={{ maxWidth: 350 }}>
+          <CardMedia image={dog?.image_url} style={{ height: 0, paddingTop: '56.25%' }} />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {dog.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {dog.temperament}
+            </Typography>
+          </CardContent>
+        </Card>
+      }
+    </>
   );
 }
 
