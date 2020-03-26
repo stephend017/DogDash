@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2820730a95b75e2e49604b7851afab1b",
+    "revision": "849331c77de36a8b80703701047bcba3",
     "url": "/DogDash/index.html"
   },
   {
-    "revision": "d6ffd8ae749132420822",
+    "revision": "f22d887368995b87150d",
     "url": "/DogDash/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DogDash/static/js/2.9adec81e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6ffd8ae749132420822",
-    "url": "/DogDash/static/js/main.7951737a.chunk.js"
+    "revision": "f22d887368995b87150d",
+    "url": "/DogDash/static/js/main.d0eb61b5.chunk.js"
   },
   {
     "revision": "c4554a41aa9d0358b8c4",
